@@ -1,7 +1,7 @@
 package shared_thread;
 
 public class SharedData {
-	private boolean isReady;
+	private boolean isReady = false;
 	private int oneToTowCnt;
 	private int towToOneCnt;
 	

@@ -1,1 +1,5 @@
 /.metadata/
+*.java
+*.jar
+.project
+.classpath

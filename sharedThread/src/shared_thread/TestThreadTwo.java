@@ -8,19 +8,23 @@ public class TestThreadTwo extends Thread {
 	}
 	
 	public void run() {
-		while(!sharedData.isReady()) {
-			
-			//if(sharedData.isReady())
-			System.out.println("받은 데이터: " + sharedData.getOneToTowCnt());
+		int cnt = 0;
+		
+		while(true) {
+			cnt++;
 			
 			try {
 				Thread.sleep(1000);
+				System.out.println("스레드 수행 횟수: " + cnt);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
-			//sharedData.setReady(true);
+			if(sharedData.isReady()) {
+				System.out.println("받은 데이터: " + sharedData.getOneToTowCnt());
+				break;
+			}
 		}
 	}
 }

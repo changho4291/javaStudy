@@ -7,7 +7,7 @@ public class ActionCommandExpression extends CommandExpression implements Expres
     public boolean parse(Context context) {
         if(!checkValidKeyword(keyword)) return false;
 
-        if(context.readNextKeyword() == null) return true;
+        context.readNextKeyword();
 
         return true;
     }
